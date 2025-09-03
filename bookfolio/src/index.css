@@ -1,0 +1,21 @@
+/* Tailwind v4 */
+@import "tailwindcss";
+
+/* --- Custom globals (safe with our layout) --- */
+:root { --dot: rgba(0,0,0,0.04); }
+
+/* Background + selection */
+body {
+  /* no flex! let pages control layout */
+  margin: 0;
+  background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+::selection { background: #fde68a; color: #111827; }
+
+/* Scroll snap container + pages */
+#snap-container { scroll-snap-type: y mandatory; }
+.story-page { scroll-snap-align: start; }
+
+/* Optional typography defaults (non-destructive) */
+html { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
